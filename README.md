@@ -19,6 +19,27 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployment instruct
 
-* ...
+###usersテーブル
+
+| Colum                | Type     | options                 |
+|--------------------- |----------|-------------------------|
+| nickname             | string   | null:false              |
+| email                | string   | null:false,unique: true |
+| encrypted_password   | string   | null:false              |
+
+#ASSOCIATION
+has_many:targets
+
+
+###targetテーブル
+
+| Colum                | Type     | options                 |
+|--------------------- |----------|-------------------------|
+| meal                 | string   | null:false              |
+| calorie              | string   | null:false              |
+| motion               | string   | null:false              |
+
+#association
+has_many:users
